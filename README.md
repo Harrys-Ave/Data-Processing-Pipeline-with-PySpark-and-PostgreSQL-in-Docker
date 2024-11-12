@@ -75,7 +75,7 @@ docker exec spark-master python /opt/bitnami/spark/scripts/landing2.py
 ### for the normalize.py script: 
 docker exec spark-master spark-submit --master spark://spark-master:7077 /opt/bitnami/spark/scripts/normalize.py
 
-### for the produce-formula.py script (have in mind that the you can change the parameters here if you want. For example the formula "item_price / net_mass" can be changed if the user wants to): 
+### For the produce-formula.py script, keep in mind that the parameters can be modified if needed. For example, the formula item_price / net_mass can be changed according to the user's preference. 
 docker exec spark-master spark-submit --master spark://spark-master:7077 --jars /opt/bitnami/spark/extra-jars/postgresql-42.7.4.jar /opt/bitnami/spark/scripts/produce-formula.py --dimensions net_mass item_price --formula "item_price / net_mass" --new_dimension_name "Price_per_Unit_Mass"
 
 ### for the denormalize.py script:
