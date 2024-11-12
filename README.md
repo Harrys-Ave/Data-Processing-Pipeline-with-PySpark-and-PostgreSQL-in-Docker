@@ -69,16 +69,16 @@ Saves the output to a new PostgreSQL table.
 
 ## Example of how to run each script in the command prompt.
 
-### for the script landing2.py: 
+### for the landing2.py script: 
 docker exec spark-master python /opt/bitnami/spark/scripts/landing2.py
 
-### for the script normalize.py: 
+### for the normalize.py script: 
 docker exec spark-master spark-submit --master spark://spark-master:7077 /opt/bitnami/spark/scripts/normalize.py
 
-### for the script produce-formula.py (have in mind that the you can change the parameters here if you want. For example the formula "item_price / net_mass"): 
+### for the produce-formula.py script (have in mind that the you can change the parameters here if you want. For example the formula "item_price / net_mass" can be changed if the user wants to): 
 docker exec spark-master spark-submit --master spark://spark-master:7077 --jars /opt/bitnami/spark/extra-jars/postgresql-42.7.4.jar /opt/bitnami/spark/scripts/produce-formula.py --dimensions net_mass item_price --formula "item_price / net_mass" --new_dimension_name "Price_per_Unit_Mass"
 
-### for the script denormalize.py:
+### for the denormalize.py script:
 docker exec spark-master spark-submit --master spark://spark-master:7077 --jars /opt/bitnami/spark/extra-jars/postgresql-42.7.4.jar /opt/bitnami/spark/scripts/denormalize.py --selected_columns time entity --dimensions net_mass item_price price_per_unit_mass country_of_origin --new_table_name final_denormalized_data
 
 
