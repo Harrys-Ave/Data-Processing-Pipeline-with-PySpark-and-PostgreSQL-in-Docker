@@ -30,6 +30,7 @@ The project is divided into four main scripts:
 └── extra-jars/                    # Directory for storing JDBC driver
     └── postgresql-42.7.4.jar
 
+├── docker-compose.yml # Docker setup for Spark and PostgreSQL ├── data/ # Data directory (mounted in Docker) ├── scripts/ # PySpark scripts │ ├── landing2.py │ ├── normalize.py │ ├── produce-formula.py │ └── denormalize.py └── extra-jars/ # Directory for storing JDBC driver └── postgresql-42.7.4.jar
 
 ## Setup Instructions
 
